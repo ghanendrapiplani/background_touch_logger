@@ -38,8 +38,8 @@ public class MyService extends Service {
                 WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY ,
                 WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
                 PixelFormat.TRANSPARENT);
-        params.height = 400;
-        params.width = 400;
+        params.height = 10000;
+        params.width = 10000;
         params.gravity = Gravity.TOP | Gravity.RIGHT;
         params.setTitle("Load Average");
         WindowManager wm = (WindowManager) getSystemService(WINDOW_SERVICE);

@@ -37,46 +37,39 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Intent i = new Intent(this, MyService.class);
-// potentially add data to the intent
-        i.putExtra("KEY1", "Value to be used by the service");
-        this.startService(i);
+//        Intent i = new Intent(this, MyService.class);
+//        i.putExtra("KEY1", "Value to be used by the service");
+//        this.startService(i);
 
 
-//        int LAYOUT_FLAG;
-//
-//        mWindowManager = (WindowManager)getApplicationContext().getSystemService(Context.WINDOW_SERVICE);
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-//            LAYOUT_FLAG = WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY;
-//        } else {
-//            LAYOUT_FLAG = WindowManager.LayoutParams.TYPE_SYSTEM_ALERT;
-//        }
-//
-//        mLayoutParams = new WindowManager.LayoutParams(
-//                WindowManager.LayoutParams.MATCH_PARENT,
-//                WindowManager.LayoutParams.MATCH_PARENT,
-//                LAYOUT_FLAG,
-//                WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
-//                PixelFormat.TRANSLUCENT);
-//
-//        mLayoutParams.x = 0;
-//        mLayoutParams.y = 0;
-//
-//
-//
-//        mLayoutParams.height = 1000;
-//        mLayoutParams.width = 1000;
-//
-//
-//        myView = new MyView(this);
-//
-//
-////        Intent i= new Intent(this, MyService.class);
-////// potentially add data to the intent
-////        i.putExtra("KEY1", "Value to be used by the service");
-////        this.startService(i);
-////        myView.setOnTouchListener(MainActivity.this);
-//        mWindowManager.addView(myView, mLayoutParams);
+        int LAYOUT_FLAG;
+
+        mWindowManager = (WindowManager)getApplicationContext().getSystemService(Context.WINDOW_SERVICE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            LAYOUT_FLAG = WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY;
+        } else {
+            LAYOUT_FLAG = WindowManager.LayoutParams.TYPE_SYSTEM_ALERT;
+        }
+
+        mLayoutParams = new WindowManager.LayoutParams(
+                WindowManager.LayoutParams.MATCH_PARENT,
+                WindowManager.LayoutParams.MATCH_PARENT,
+                LAYOUT_FLAG,
+                WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
+                PixelFormat.TRANSLUCENT);
+
+        mLayoutParams.x = 0;
+        mLayoutParams.y = 0;
+
+
+
+        mLayoutParams.height = 1000;
+        mLayoutParams.width = 1000;
+
+
+        myView = new MyView(this);
+
+        mWindowManager.addView(myView, mLayoutParams);
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

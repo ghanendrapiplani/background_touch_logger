@@ -6,7 +6,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class MyView extends View {
+public class MyView extends ViewGroup {
     public MyView(Context context) {
         super(context);
 //        this.setAlpha(0);
@@ -19,12 +19,12 @@ public class MyView extends View {
 //        super.onLayout(changed, l, t, r, b);
     }
 
-//    @Override
-//    public boolean onInterceptTouchEvent(MotionEvent ev) {
-//        super.onInterceptTouchEvent(ev);
-//        Log.d("GP", ev.getX() + "," + ev.getY());
-//        return false;
-//    }
+    @Override
+    public boolean onInterceptTouchEvent(MotionEvent ev) {
+        super.onInterceptTouchEvent(ev);
+        Log.d("GP", ev.getX() + "," + ev.getY());
+        return false;
+    }
 
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
